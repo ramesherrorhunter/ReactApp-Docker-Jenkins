@@ -4,7 +4,7 @@ FROM node:latest as build
 WORKDIR /app
 
 COPY package.json package-lock.json ./
-RUN npm install@10.2.3 -g --silent
+RUN npm install react-scripts@10.2.3 -g --silent
 
 COPY . .
 RUN npm run build
