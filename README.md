@@ -3,20 +3,24 @@
 
 docker-compose build --no-cache
 
+
 #to up in dettach mode
 
 
 docker-compose up -d
+
 
 #check
 
 
 http://localhost:3001
 
+
 #to down
 
 
-dokcer-compose down
+docker-compose down
+
 
 #remove container
 
