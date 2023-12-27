@@ -1,0 +1,25 @@
+pipeline{
+    agent any
+    stages{
+        stage('Checkout'){
+            steps{
+                git url:"https://github.com/ramesherrorhunter/react-node-nginx-cide.git", branch:"master"
+            }
+        }
+        stage('Build'){
+            steps{
+                sh 'docker-compose build --no-cache'
+            }
+        }
+        stage('Deploy'){
+            steps{
+                sh 'docker-compose up -d'
+            }
+        }
+    }
+    post{
+        always{
+            sh 'echo build and deployement done'
+        }
+    }
+}
